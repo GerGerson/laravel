@@ -18,21 +18,5 @@ Route::post('/TestJS', 'HomeController@testJS');
 Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
-Route::get('/LikeSetting/{t_id}', 'LikeSetting@getDivSetting');
 
-//jason test master
-//
-//
-Route::get('/', function()
-{
-    return 'Hello World';
-});
-
-//Route::post('/Like/Promor/{type}', 'HomeController@getLike');
-//Testing ABC
-//
-//
-//Route::post('/Like/Promor/{type}', 'HomeController@getLike');
-//Testing ABC
-
-//Chung test master
+Route::get('/GetTemplateSetting/{t_id}/{type}', 'General@getSettingToDiv');

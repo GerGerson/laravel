@@ -6,7 +6,7 @@
 	{
 		$no = DB::select("SELECT count(1) as tot FROM template WHERE t_id = ?", array($t_id));
 		
-		return $no[0]->tot;
+		return $no[0]->tot; 
 	}
 	
 	public function getDivSetting($t_id)
@@ -22,8 +22,6 @@
 		}
 		return $strHtml;
 	}
-	
-	
 	
 	
 	
