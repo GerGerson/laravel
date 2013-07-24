@@ -1,26 +1,14 @@
 <?php
 	
 	class LikeSetting extends BaseController {
-
-	private function getNoOfModule($t_id)
-	{
-		$no = DB::select("SELECT count(1) as tot FROM template WHERE t_id = ?", array($t_id));
-		
-		return $no[0]->tot; 
-	}
 	
-	public function getDivSetting($t_id)
+	public function getSettingDiv($t_id)
 	{
 		$strHtml = "";
 		
-		$no = $this->getNoOfModule($t_id);
-
-		if ($no == 0) return "";
-		
-		for ($i = 0; $i <= $no; $i++){
-			$strHtml .= $i . " ";
-		}
-		return $strHtml;
+		$strHtml .= "$.post('".$mid->path."/1', function(data){";
+		$strHtml .= "document.getElementById('div_".$count."').innerHTML=data;";
+		$strHtml .= "});";
 	}
 	
 	

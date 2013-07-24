@@ -11,11 +11,13 @@
 			return $mInfo; 
 		}
 		
-		private function getModuleCode(){
-			
+		private function getModuleJSCode($path){
+			$strHtml .= "$.post('".$path."', function(data){";
+			$strHtml .= "document.getElementById('div_".$count."').innerHTML=data;";
+			$strHtml .= "});";
 		}
 		
-		public function getSettingToDiv($t_id, $type)
+		public function getSettingDiv($t_id, $type)
 		{
 			$strHtml = "";
 			
@@ -26,7 +28,8 @@
 			
 			//Get the module code
 			for ($i = 0; $i < count($mInfo); $i++){
-				$strHtml .= $mInfo[$i]->path . "\n";
+				//$strHtml .= $mInfo[$i]->path . "\n";
+				$strHtml .= "<div id=". $i ."></div>"
 			}
 			return $strHtml;
 		}

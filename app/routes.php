@@ -19,4 +19,13 @@ Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
 
-Route::get('/GetTemplateSetting/{t_id}/{type}', 'General@getSettingToDiv');
+Route::get('/setting', function()
+{
+	return "ABC";
+	//return View::make('test_setting', array('$tid'=>1,'type'=>0));
+});
+
+Route::post('/GetTemplateSetting/{t_id}/{type}', 'General@getSettingDiv');
+
+//Like
+Route::post('/like/setting/{type}', 'LikeSetting@getSettingToDiv');
