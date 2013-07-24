@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
-	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="../../assets/script/jquery-2.0.3.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="testA">
@@ -22,9 +22,25 @@
 
 <script>
 	jQuery(document).ready(function() {
+		// Load the SDK Asynchronously
+	  (function(d){
+		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = "//connect.facebook.net/en_US/all.js";
+		 ref.parentNode.insertBefore(js, ref);
+	   }(document)); 
+	
 		$.post('../Temp/'+ <?php echo $tid?>, function(data){
 			document.getElementById('div_test').innerHTML=data;
 		});
+		
+		setTimeout(refreshFB,1000);
+		
+		function refreshFB(){
+			FB.XFBML.parse();
+		}
+		
 		
 		<?php 
 		$str = "";
@@ -32,15 +48,15 @@
 		$count = 0;
 		foreach($mids as $mid){
 			$str .= "$.post('".$mid->path."/0', function(data){";
-			$str.="	var script = document.createElement('script');";
-			$str.="	script.type = 'text/javascript';";
-			$str.="	script.text = data;";
-			$str.="	$('body').append(script);";
-			$str.="});";
+			$str.="	\nvar script_".$count." = document.createElement('script');";
+			$str.="	\nscript_".$count.".type = 'text/javascript';";
+			$str.="	\nscript_".$count.".text = data;";
+			$str.="	\n$('body').append(script_".$count.");";
+			$str.="\n});";
 			
-			$str2 .= "$.post('".$mid->path."/1', function(data){";
-			$str2 .= "document.getElementById('div_".$count."').innerHTML=data;";
-			$str2 .= "});";
+			$str2 .= "\n$.post('".$mid->path."/1', function(data){";
+			$str2 .= "\ndocument.getElementById('div_".$count."').innerHTML=data;";
+			$str2 .= "\n});";
 
 		}
 		echo $str;

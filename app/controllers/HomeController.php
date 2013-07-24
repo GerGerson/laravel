@@ -49,13 +49,34 @@ class HomeController extends BaseController {
 	
 	public function getLike($type){
 		if($type == 0){
-			$str = "jQuery(document).ready(function() {  ";
-			$str .= "$.post('../TestA', function(data){";
-			$str .= "document.getElementById('testA').innerHTML=data;";
-			$str .= "});});";
+			$str = "var page;var url;var uID;var uName;";
+			$str .= "window.fbAsyncInit = function() {";
+			$str .= "FB.init({ ";
+			$str .= "appId      : '625779757441110',";
+			$str .= "channelUrl : '//www.carkeyli.com/jasonpro',";
+			$str .= "status     : true, ";
+			$str .= "cookie     : true,";
+			$str .= "xfbml      : true});";
+			
+			$str .= "function login(val) {";
+			$str .= "FB.login(function(response) {";
+			$str .= "if (response.authResponse) {";
+			$str .= "uID = response.authResponse.userID;";
+			$str .= "var url = '/me/likes/'+ val + '?access_token=' + response.authResponse.accessToken;";
+			$str .= "FB.api(url,function(response){";
+			$str .= "if (response.data.length == 0){ ";
+			$str .= "FB.XFBML.parse();";
+			$str .= "}else{";
+			$str .= "FB.api('/me', function(response) {";
+			$str .= "uName = response.name;";
+			$str .= "});}});} else {}}, {scope: 'user_likes'});} ";
+			
+			
 			return $str;
 		}else{
-			$str = "Like 22222";
+			$str = '<div id="fb-root"></div>';
+			$str .= '<div class="fb-like" data-href="https://www.facebook.com/megawillwine" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>';
+			return $str;
 		}
 	}
 	
