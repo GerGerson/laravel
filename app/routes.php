@@ -20,7 +20,7 @@ Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
 Route::get('/LikeSetting/{t_id}', 'LikeSetting@getDivSetting');
 
-//jason
+//jason test master
 Route::get('/', function()
 {
     return 'Hello World';
