@@ -18,3 +18,11 @@ Route::post('/TestJS', 'HomeController@testJS');
 Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
+
+Route::get('/LikeSetting/{t_id}', 'LikeSetting@getDivSetting');
+
+//jason
+Route::get('/', function()
+{
+    return 'Hello World';
+});
