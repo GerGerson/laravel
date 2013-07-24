@@ -28,7 +28,7 @@ Route::get('/', function()
 
 //Route::post('/Like/Promor/{type}', 'HomeController@getLike');
 //Testing ABC
-
-
+//
+//
 //Route::post('/Like/Promor/{type}', 'HomeController@getLike');
 //Testing ABC
