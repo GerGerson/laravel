@@ -19,5 +19,6 @@ Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
 
+Route::post('/Like/Promor/{type}', 'HomeController@getLike');
 
 
