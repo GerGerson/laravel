@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/{id}', 'HomeController@showWelcome');
+Route::get('/hello/{id}', 'HomeController@showWelcome');
 Route::post('/TestA', 'HomeController@testA');
 Route::post('/TestB', 'HomeController@testB');
 Route::post('/TestJS', 'HomeController@testJS');
@@ -19,13 +19,8 @@ Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
 
-Route::get('/setting', function()
-{
-	return "ABC";
-	//return View::make('test_setting', array('$tid'=>1,'type'=>0));
-});
-
-Route::post('/GetTemplateSetting/{t_id}/{type}', 'General@getSettingDiv');
+Route::get('/ShowSetting/{t_id}/{type}', 'General@showSettingLayout');
+Route::post('/GetTemplateSetting/{t_id}', 'General@getSettingDiv');
 
 //Like
-Route::post('/like/setting/{type}', 'LikeSetting@getSettingToDiv');
+Route::post('/Like/Setting/{type}', 'LikeSetting@getSettingDiv');

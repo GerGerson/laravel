@@ -17,19 +17,28 @@
 			$strHtml .= "});";
 		}
 		
-		public function getSettingDiv($t_id, $type)
+		public function showSettingLayout($t_id)
+		{
+		//$t_id = 1;
+		//$type=0;
+			$mInfo = $this->getModuleInfo($t_id,0);
+
+			return View::make("test_setting", array("t_id"=>$t_id,"mInfo"=>$mInfo));
+		}
+		
+		public function getSettingDiv($t_id)
 		{
 			$strHtml = "";
 			
 			//No. of Module
-			$mInfo = $this->getModuleInfo($t_id, $type);
+			$mInfo = $this->getModuleInfo($t_id, 0);
 
 			if (count($mInfo) == 0) return "";
 			
 			//Get the module code
 			for ($i = 0; $i < count($mInfo); $i++){
 				//$strHtml .= $mInfo[$i]->path . "\n";
-				$strHtml .= "<div id=". $i ."></div>"
+				$strHtml .= "<div id=". $i ."></div>";
 			}
 			return $strHtml;
 		}

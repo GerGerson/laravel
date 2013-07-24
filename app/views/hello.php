@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
-	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="/js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="testA">

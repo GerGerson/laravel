@@ -2,13 +2,11 @@
 	
 	class LikeSetting extends BaseController {
 	
-	public function getSettingDiv($t_id)
+	public function getSettingDiv($type)
 	{
-		$strHtml = "";
+		$strHtml = "ABC";
 		
-		$strHtml .= "$.post('".$mid->path."/1', function(data){";
-		$strHtml .= "document.getElementById('div_".$count."').innerHTML=data;";
-		$strHtml .= "});";
+		return $strHtml;
 	}
 	
 	
