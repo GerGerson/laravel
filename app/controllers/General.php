@@ -19,8 +19,6 @@
 		
 		public function showSettingLayout($t_id)
 		{
-		//$t_id = 1;
-		//$type=0;
 			$mInfo = $this->getModuleInfo($t_id,0);
 
 			return View::make("test_setting", array("t_id"=>$t_id,"mInfo"=>$mInfo));
@@ -37,7 +35,6 @@
 			
 			//Get the module code
 			for ($i = 0; $i < count($mInfo); $i++){
-				//$strHtml .= $mInfo[$i]->path . "\n";
 				$strHtml .= "<div id=". $i ."></div>";
 			}
 			return $strHtml;

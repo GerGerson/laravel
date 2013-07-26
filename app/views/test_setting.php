@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
+	<!-- Bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
 	<script src="/js/jquery.js" type="text/javascript"></script>
+	<script src="/js/bootstrap.js"></script>
+	
+	
 </head>
 <body>
-
 	<div id="content"></div>
+	
+
+	
 </body>
 </html>
 
@@ -25,8 +32,8 @@
 		$count = 0;
 		//foreach($mInfo as $mid){
 		for ($i = 0; $i < count($mInfo); $i++){
-			$str .= "$.post('".$mInfo[$i]->path."/0', function(data){";
-			$str.="	document.getElementById('". $i ."').innerHTML=data;";
+			$str .= "$.post('". $mInfo[$i]->path ."', function(data){";
+			$str.="	document.getElementById('". (string)$i ."').innerHTML=data;";
 			$str.="});";
 			
 			/*$str2 .= "$.post('".$mid->path."/1', function(data){";

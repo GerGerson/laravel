@@ -19,8 +19,11 @@ Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
 
+//***************Setting
+//1.General 
 Route::get('/ShowSetting/{t_id}/{type}', 'General@showSettingLayout');
 Route::post('/GetTemplateSetting/{t_id}', 'General@getSettingDiv');
 
-//Like
-Route::post('/Like/Setting/{type}', 'LikeSetting@getSettingDiv');
+//2. Module
+//Like Setting
+Route::post('/Like/Setting', 'LikeSetting@getSettingDivHTML');

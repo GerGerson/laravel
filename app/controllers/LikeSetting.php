@@ -2,10 +2,19 @@
 	
 	class LikeSetting extends BaseController {
 	
-	public function getSettingDiv($type)
+	public function getSettingDivHTML()
 	{
-		$strHtml = "ABC";
+		$strHtml = "";
 		
+		$strHtml .= "<form class='form-horizontal'>";
+		$strHtml .= "	<div class='control-group'>";
+		$strHtml .= "		<label class='control-label' for='inputURL'>Fan Page URL</label>";
+		$strHtml .= "		<div class='controls'>";
+		$strHtml .= "   		<input type='text' id='inputURL' placeholder='URL...'>";
+		$strHtml .= "		</div>";
+		$strHtml .= "	</div>";
+		$strHtml .= "</form>";
+		$strHtml .= "<button class='btn btn-large btn-primary' type='button'>Large button</button>";
 		return $strHtml;
 	}
 	
