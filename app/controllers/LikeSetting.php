@@ -7,14 +7,33 @@
 		$strHtml = "";
 		
 		$strHtml .= "<form class='form-horizontal'>";
+		$strHtml .= "	<legend>Like Setting</legend>";
 		$strHtml .= "	<div class='control-group'>";
 		$strHtml .= "		<label class='control-label' for='inputURL'>Fan Page URL</label>";
 		$strHtml .= "		<div class='controls'>";
 		$strHtml .= "   		<input type='text' id='inputURL' placeholder='URL...'>";
 		$strHtml .= "		</div>";
 		$strHtml .= "	</div>";
+		
+		$strHtml .= "	<legend>Share Setting</legend>";
+		$strHtml .= "	<div class='control-group'>";
+		$strHtml .= "		<label class='control-label' for='rLink'>Redirect Link</label>";
+		$strHtml .= "		<div class='controls'>";
+		$strHtml .= "   		<input type='text' id='rLink' placeholder='Link...'>";
+		$strHtml .= "		</div>";
+		$strHtml .= "		<label class='control-label' for='caption'>caption</label>";
+		$strHtml .= "		<div class='controls'>";
+		$strHtml .= "   		<input type='text' id='caption' placeholder='Caption...'>";
+		$strHtml .= "		</div>";
+		$strHtml .= "		<label class='control-label' for='Description'>Description</label>";
+		$strHtml .= "		<div class='controls'>";
+		$strHtml .= "   		<input type='text' id='rLink' placeholder='Description...'>";
+		$strHtml .= "		</div>";
+		$strHtml .= "	</div>";
+		
 		$strHtml .= "</form>";
 		$strHtml .= "<button class='btn btn-large btn-primary' type='button'>Large button</button>";
+		
 		return $strHtml;
 	}
 	
