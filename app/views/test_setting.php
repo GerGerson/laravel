@@ -22,7 +22,7 @@
 
 <script>
 	jQuery(document).ready(function() {
-		$.post('/GetTemplateSetting/' + <?=$t_id ?> , function(data){
+		$.post('/GetTemplateSetting/' + <?=$t_id?> , function(data){
 			document.getElementById('content').innerHTML=data;
 		});
 		
