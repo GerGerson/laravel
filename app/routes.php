@@ -27,3 +27,6 @@ Route::post('/GetTemplateSetting/{t_id}', 'General@getSettingDiv');
 //2. Module
 //Like Setting
 Route::post('/Like/Setting', 'LikeSetting@getSettingDivHTML');
+
+//Test Blade
+
