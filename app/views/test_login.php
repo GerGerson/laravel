@@ -22,6 +22,7 @@
       // The response object is returned with a status field that lets the app know the current
       // login status of the person. In this case, we're handling the situation where they 
       // have logged in to the app.
+	  
       testAPI();
     } else if (response.status === 'not_authorized') {
       // In this case, the person is logged into Facebook, but not into the app, so we call
@@ -57,8 +58,9 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-	  console.log("<img src='https://graph.facebook.com/" + response.id + "/picture>");
-	  document.getElementById("fb-login").innerHtml = "<img src='https://graph.facebook.com/" + response.id + "/picture>";
+	  console.log("<img src='https://graph.facebook.com/" + response.id + "/picture'>");
+	  $('#fb_login').append("<img height='25' width='25' src='https://graph.facebook.com/" + response.id + "/picture'>");
+	  //document.getElementById("fb_login").innerHtml = "<img src='https://graph.facebook.com/" + response.id + "/picture'>";
       console.log('Good to see you, ' + response.name + '.');
     });
   }
@@ -70,7 +72,9 @@
 
   Learn more about options for the login button plugin:
   /docs/reference/plugins/login/ -->
-	<div id="fb-login"></div>
+	<div id="fb_login"></div>
 	<fb:login-button show-faces="false" width="200" max-rows="1" autologoutlink="true"></fb:login-button>
+	
+	<script src="/js/jquery.js"></script>
 </body>
 </html>
