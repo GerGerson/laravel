@@ -29,4 +29,7 @@ Route::post('/GetTemplateSetting/{t_id}', 'General@getSettingDiv');
 Route::post('/Like/Setting', 'LikeSetting@getSettingDivHTML');
 
 //Test Blade
-
+Route::get('/login', function()
+{
+    return View::make('test_login');
+});
