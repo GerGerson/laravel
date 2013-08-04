@@ -57,6 +57,8 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
+	  console.log("<img src='https://graph.facebook.com/" + response.id + "/picture>");
+	  document.getElementById("fb-login").innerHtml = "<img src='https://graph.facebook.com/" + response.id + "/picture>";
       console.log('Good to see you, ' + response.name + '.');
     });
   }
@@ -68,7 +70,7 @@
 
   Learn more about options for the login button plugin:
   /docs/reference/plugins/login/ -->
-
-<fb:login-button show-faces="false" width="200" max-rows="1" autologoutlink=true></fb:login-button>
+	<div id="fb-login"></div>
+	<fb:login-button show-faces="false" width="200" max-rows="1" autologoutlink="true"></fb:login-button>
 </body>
 </html>
