@@ -14,6 +14,18 @@ class HomeController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
+	protected $layout = 'layouts.master';
+	
+	public function templateTest(){
+		$mids = DB::table('template')
+								->join('module', 'template.m_id', '=', 'module.m_id')
+								->select('module.m_id', 'module.path')
+								->where('template.t_id', 1)
+								->where('module.type_id', 1)
+								->get();
+	
+		$this->layout->content = View::make('test', array('mids' => $mids));
+	}
 
 	public function showWelcome($id)
 	{
@@ -87,6 +99,10 @@ class HomeController extends BaseController {
 			$str .= '<div id="div_'.$i.'"></div>';
 		}
 		return $str;
+	}
+	
+	public function ABC(){
+		return '1234';
 	}
 
 }

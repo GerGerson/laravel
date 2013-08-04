@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/', 'HomeController@templateTest');
 Route::get('/{id}', 'HomeController@showWelcome');
 Route::post('/TestA', 'HomeController@testA');
 Route::post('/TestB', 'HomeController@testB');
@@ -18,3 +19,5 @@ Route::post('/TestJS', 'HomeController@testJS');
 Route::post('/Temp/{id}', 'HomeController@getWebDIV');
 Route::post('/Module/{id}', 'HomeController@getModuleCode');
 Route::post('/Like/Promo/{type}', 'HomeController@getLike');
+
+Route::get('setting', 'HomeController@ABC');
